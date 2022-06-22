@@ -1,81 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 
-
 interface MenuItem {
-
   texto: string;
   ruta: string;
 }
 @Component({
   selector: 'app-sidemenu',
   templateUrl: './sidemenu.component.html',
-  styles: [`
-  
-  li:hover{
-
-cursor:pointer;
-  }
-  
-  
-  `
-  ]
+  styles: [
+    `
+      li:hover {
+        cursor: pointer;
+      }
+    `,
+  ],
 })
 export class SidemenuComponent implements OnInit {
+  templateMenu: MenuItem[] = [
+    {
+      texto: 'Básicos',
+      ruta: './template/basicos',
+    },
 
+    {
+      texto: 'Dinámicos',
+      ruta: './template/dinamicos',
+    },
 
-  templateMenu: MenuItem[] = [{
-    texto: 'Básicos',
-    ruta: './template/basicos'
+    {
+      texto: 'Switches',
+      ruta: './template/switches',
+    },
+  ];
 
+  reactiveMenu: MenuItem[] = [
+    {
+      texto: 'Básicos',
+      ruta: './reactive/basicos',
+    },
 
-  },
+    {
+      texto: 'Dinámicos',
+      ruta: './reactive/dinamicos',
+    },
 
+    {
+      texto: 'Switches',
+      ruta: './reactive/switches',
+    },
+  ];
 
-  {
-    texto: 'Dinámicos',
-    ruta: './template/dinamicos'
+  authMenu: MenuItem[] = [
+    {
+      texto: 'login',
+      ruta: './auth/login',
+    },
 
+    {
+      texto: 'register',
+      ruta: './auth/register',
+    },
+  ];
 
-  }
+  constructor() {}
 
-    ,
-
-  {
-    texto: 'Switches',
-    ruta: './template/switches'
-
-
-  }]
-
-  reactiveMenu: MenuItem[] = [{
-    texto: 'Básicos',
-    ruta: './reactive/basicos'
-
-
-  },
-
-
-  {
-    texto: 'Dinámicos',
-    ruta: './reactive/dinamicos'
-
-
-  }
-
-    ,
-
-  {
-    texto: 'Switches',
-    ruta: './reactive/switches'
-
-
-  }]
-
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
